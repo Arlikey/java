@@ -7,8 +7,8 @@ public class ReverseNumber {
 
 
     public static void main(String[] args) {
-        int userNumber = 0;
-        String stringUserNumber = "";
+        int userNumber;
+        String stringUserNumber;
 
         do {
             System.out.print("Enter six-digit number (for exit enter 0): ");

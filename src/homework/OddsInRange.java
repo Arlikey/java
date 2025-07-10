@@ -7,7 +7,6 @@ public class OddsInRange {
 
     public static void main(String[] args) {
         int from, to;
-        from = to = 0;
 
         System.out.print("Enter starting number of range: ");
         from = getValidInput();

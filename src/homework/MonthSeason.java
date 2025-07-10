@@ -6,7 +6,7 @@ public class MonthSeason {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int userMonth = 0;
+        int userMonth;
 
         while (true) {
             System.out.print("Enter month (1-12) (for exit enter 0): ");
