@@ -1,7 +1,6 @@
 package homework;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class FuelCalculator {
     static Random rand = new Random();
