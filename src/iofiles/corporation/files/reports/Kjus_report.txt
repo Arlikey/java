@@ -1,0 +1,1 @@
+Employee{id=2, firstName='Nasm', lastName='Kjus', age=30, workExperience=7, position=Manager}
