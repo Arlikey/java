@@ -1,5 +1,6 @@
 package iofiles;
 
+import iofiles.censor.Censor;
 import iofiles.corporation.*;
 
 import java.io.*;
@@ -15,7 +16,7 @@ public class Main {
         //string_equality();
         //longest_str_in_file();
         //array_in_file();
-        //censor();
+        //Censor.censor(Path.of(directory + "words.txt"), new String[]{"Bad"});
         corporation();
     }
 
@@ -95,45 +96,6 @@ public class Main {
             System.out.println("Data successfully written in " + fileName);
         } catch (IOException e) {
             System.out.println("Something went wrong during writing: " + e.getMessage());
-        }
-    }
-
-    private static void censor() {
-        String fileName = "words.txt";
-        System.out.print("Enter list of ban words: ");
-        String[] banWords = scan.nextLine().trim().split("[\\s,;]+");
-
-        Map<String, Integer> wordCount = new HashMap<>();
-
-        try {
-            String fileText = Files.readString(Path.of(directory + fileName));
-
-            for (String word : banWords) {
-                int count = 0;
-
-                String replacement = "*".repeat(word.length());
-
-                while (fileText.toLowerCase().contains(word.toLowerCase())) {
-                    fileText = fileText.replaceFirst("(?i)" + word, replacement);
-                    count++;
-                }
-
-                if (count > 0) {
-                    wordCount.put(word, count);
-                }
-            }
-
-            Files.writeString(Path.of(directory + fileName), fileText);
-
-            int total = 0;
-            for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
-                System.out.println("\"" + entry.getKey() + "\" censored: " + entry.getValue() + " times");
-                total += entry.getValue();
-            }
-            System.out.println("Total censored words: " + total);
-
-        } catch (IOException e) {
-            System.out.println("Something went wrong: " + e.getMessage());
         }
     }
 
